@@ -1,0 +1,19 @@
+{
+  "name": "ananta-hotels-app",
+  "version": "1.0.0",
+  "description": "Curated list of luxury and boutique hotels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heidixpoon/Ananta-hotels-app.git"
+  },
+  "author": "Heidi Poon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heidixpoon/Ananta-hotels-app/issues"
+  },
+  "homepage": "https://github.com/heidixpoon/Ananta-hotels-app#readme"
+}
