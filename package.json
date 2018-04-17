@@ -4,7 +4,8 @@
   "description": "Curated list of luxury and boutique hotels",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,31 @@
   "bugs": {
     "url": "https://github.com/heidixpoon/Ananta-hotels-app/issues"
   },
-  "homepage": "https://github.com/heidixpoon/Ananta-hotels-app#readme"
+  "homepage": "https://github.com/heidixpoon/Ananta-hotels-app#readme",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "redux-devtools": "^3.4.1",
+    "webpack": "^2.2.1",
+    "webpack-cli": "^2.0.14"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^2.0.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.0",
+    "express-session": "^1.15.6",
+    "history": "^4.7.2",
+    "mongoose": "^5.0.15",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "request": "^2.83.0"
+  }
 }
