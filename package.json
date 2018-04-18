@@ -33,6 +33,7 @@
     "express": "^4.15.0",
     "express-session": "^1.15.6",
     "history": "^4.7.2",
+    "material-ui": "^0.20.0",
     "mongoose": "^5.0.15",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

@@ -35,6 +35,29 @@ var restrict = (req, res, next) => {
 //   res.send(!!req.session && !!req.session.user);
 // })
 
+app.get('/hotels', (req,res) => {
+  db.getAllHotels()
+  .then((response) => {
+    // console.log(response)
+    res.status(200).send(response);
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+})
+
+app.post('/hotels', (req, res) => {
+  // console.log(req.body.data);
+  db.createHotel(req.body.data)
+  .then((response) => {
+    console.log(response)
+    res.status(200).send()
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+})
+
 
 
 let port = 8080;

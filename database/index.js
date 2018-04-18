@@ -18,8 +18,40 @@ let hotelSchema = mongoose.Schema(hotelObj);
 let Hotel = mongoose.model('Hotel', hotelSchema);
 
 
+let createHotel = (data) => {
+ 
+  let eachHotel = {
+    name: data.name,
+    hotelUrl: data.website,
+    city: data.city,
+    country: data.country,
+    mainImg: data.mainImg,
+    endImg: data.endImg,
+    setting: data.setting,
+    experience: data.experience,
+    mainDesc: data.mainDes,
+    firstTopic: data.firTopic,
+    firstDesc: data.firDes,
+    firstImg: data.firImg,
+    secondTopic: data.secTopic,
+    secondDesc: data.secDes,
+    secondImg: data.secImg,
+    thirdTopic: data.thirdTopic,
+    thirdDesc: data.thirdDes,
+    thirdImg: data.thirdImg,
+  };
+ 
+  return Hotel.create(eachHotel).catch((err) => {console.log('failed save', err)})
+ 
+}
+
+
+let getAllHotels = () => {
+  return Hotel.find({}).exec();
+}
 
 module.exports = {
-  
+  createHotel,
+  getAllHotels
 }
 

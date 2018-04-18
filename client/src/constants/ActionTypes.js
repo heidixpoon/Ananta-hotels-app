@@ -1,4 +1,5 @@
 export default {
   HELLO_WORLD: 'HELLO_WORLD',
   SAY_HI: 'SAY_HI',
+  GET_HOTELS_LIST: 'GET_HOTELS_LIST'
 }

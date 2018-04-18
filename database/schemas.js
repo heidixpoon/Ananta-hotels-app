@@ -3,6 +3,8 @@ let hotelObj = {
   hotelUrl: String,
   city: String,
   country: String,
+  mainImg: String,
+  endImg: String,
   setting: String,
   experience: String,
   mainDesc: String,
@@ -15,7 +17,6 @@ let hotelObj = {
   thirdTopic: String,
   thirdDesc: String,
   thirdImg: String,
-  endImg: String
 };
 
 

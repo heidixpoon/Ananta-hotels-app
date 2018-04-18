@@ -1,5 +1,6 @@
 import ActionTypes from '../constants/ActionTypes'
 import { push } from 'react-router-redux'
+import axios from 'axios'
 
 const helloWorld = () => ({ type: ActionTypes.HELLO_WORLD })
 
@@ -24,7 +25,28 @@ const sayHi = () => (dispatch, getState) => {
 
 }
 
+const getAllHotels = () => (dispatch, getState) => {
+
+  console.log('in actions')
+  const state = getState();
+  console.log('state',state)
+
+  axios.get('/hotels')
+  .then((response) => {
+    console.log(response)
+    dispatch({
+      type: ActionTypes.GET_HOTELS_LIST,
+      code: response
+    }) 
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+
+}
+
 module.exports = {
   helloWorld,
-  sayHi
+  sayHi,
+  getAllHotels
 } 

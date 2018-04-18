@@ -20,6 +20,9 @@ import SearchResults from './containers/SearchResultsPage.jsx'
 import AdminList from './containers/AdminListPage.jsx'
 import AdminCreateHotel from './containers/AdminCreatePage.jsx'
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory()
 
@@ -44,6 +47,7 @@ const store = createStore(
 // store.dispatch(push('/foo'))
 
 ReactDOM.render(
+  <MuiThemeProvider>
   <Provider store={store}>
     { /* ConnectedRouter will use the store from Provider automatically */ }
     <ConnectedRouter history={history}>
@@ -57,7 +61,8 @@ ReactDOM.render(
 
       </div>
     </ConnectedRouter>
-  </Provider>,
+  </Provider>
+  </MuiThemeProvider>,
   document.getElementById('app')
 )
 
