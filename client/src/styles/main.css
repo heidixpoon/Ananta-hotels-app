@@ -1,3 +1,61 @@
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Arapey|Cormorant+Garamond|Oranienbaum|Ubuntu+Condensed");
+body {
+  margin: 0; }
+
 h1 {
-  font-family: 'Cormorant Garamond', serif; }
+  font-family: 'Oranienbaum', serif; }
+
+.c-outer {
+  padding: 0;
+  max-width: initial;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  position: relative; }
+
+.c-video {
+  height: 500px;
+  max-height: 500px; }
+
+.c-videoHome {
+  height: 100%; }
+  .c-videoHome__iframe {
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translateY(-50%) translateX(-50%);
+    position: relative; }
+
+.c-settings {
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; }
+  .c-settings__each {
+    text-align: center;
+    width: 325px;
+    cursor: pointer; }
+
+.c-experiences {
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; }
+  .c-experiences__each {
+    text-align: center;
+    cursor: pointer; }

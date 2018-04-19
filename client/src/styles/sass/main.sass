@@ -1,5 +1,72 @@
+body
+  margin: 0
+  
 h1 
-  font-family: 'Cormorant Garamond', serif
+  font-family: 'Oranienbaum', serif
+
+.c-outer
+    padding: 0;
+    max-width: initial;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    position: relative;
+
+.c-video 
+  height: 500px
+  max-height:  500px
+
+.c-videoHome
+  // z-index: -99
+  // width: 100%
+  height: 100%
+  // max-width: 1280px
+  // position:relative
+  // overflow:hidden
+  &__iframe
+    top: 50%
+    left: 50%
+    transform-style: preserve-3d
+    transform: translateY(-50%) translateX(-50%)
+    position: relative
+
+.c-settings
+  padding: 0
+  margin: 0
+
+  justify-content: space-around
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  &__each
+    text-align: center
+    width: 325px
+    cursor: pointer
+
+
+
+.c-experiences
+  padding: 0
+  margin: 0
+
+  justify-content: space-around
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  &__each
+    text-align: center
+    cursor: pointer
 
 
 

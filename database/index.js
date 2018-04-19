@@ -54,9 +54,21 @@ let deleteHotel = (hotelName) => {
   return Hotel.find({ name: hotelName }).remove().exec();
 }
 
+let getSettingSearch = (settingName) => {
+  return Hotel.find({ setting: settingName }).exec();
+} 
+
+let getExperienceSearch = (experienceName) => {
+  return Hotel.find({ experience: experienceName }).exec();
+} 
+
+
+
 module.exports = {
   createHotel,
   getAllHotels,
-  deleteHotel
+  deleteHotel,
+  getSettingSearch,
+  getExperienceSearch
 }
 

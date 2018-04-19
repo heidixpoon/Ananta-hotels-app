@@ -9,19 +9,32 @@ class SearchResults extends React.Component {
     constructor(props){
         super(props) 
 
-        
+        this.handleClick = this.handleClick.bind(this)
     }
 
-    componentDidMount(){
-      console.log(this.props.actions)
-      this.props.actions.sayHi();
+    handleClick(item){
+        this.props.actions.setCurrentHotel(item)
     }
+
+
 
 
     render() {  
+        console.log('=======',this.props.appState)
+        let {searchResults} = this.props.appState
+
         return (
             <main>
               <h1>This Search Results</h1>
+              {
+                  searchResults.map((item, i) => {
+                        return (
+                            <div key={i} onClick={()=> {this.handleClick(item)} }>
+                                <h3>{item.name}</h3>
+                            </div>
+                    )
+                  })
+              }
                 
             </main>
         )

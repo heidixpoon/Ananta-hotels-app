@@ -13,11 +13,23 @@ class Home extends React.Component {
             experiences: ['Eco-Friendly', 'Adventure', 'Wellness', 'Indulgence']
         }
 
+        this.handClickExperience = this.handClickExperience.bind(this)
+        this.handleClickSetting = this.handleClickSetting.bind(this)
+
         
     }
 
     componentDidMount(){
-      this.props.actions.getAllHotels()
+        this.props.actions.getAllHotels()
+    }
+
+    handleClickSetting(settingName){
+        console.log('clicked', settingName)
+        this.props.actions.getSettingSeach(settingName)
+    }
+
+    handClickExperience(experienceName){
+        this.props.actions.getExperienceSearch(experienceName)
     }
 
 
@@ -29,13 +41,26 @@ class Home extends React.Component {
 
         return (
             <main>
-                <h1>This is home</h1>
+                <h1>The Ananta List</h1>
+                <div className="c-outer">
+                    <div className="c-video">
+                        <div className="c-videoHome">
+                            <iframe className="c-videoHome__iframe" frameBorder="0" height="250%" width="100%" 
+                                src="https://www.youtube.com/embed/tNr8lDKzAxg?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1"
+                                allowFullScreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
 
-                <div className="settings-container">
+
+                <div className="c-settings">
                     {
                         settings.map((item, i) => {
                             return (
-                                <h5 key={i}>{item}</h5>
+                                <div className="c-settings__each" key={i} onClick={() => {this.handleClickSetting(item)} }>
+                                    <h5>{item}</h5>
+                                </div>
                             )
                         })
                     }
@@ -45,11 +70,13 @@ class Home extends React.Component {
                 <br/>
 
 
-                <div className="">
+                <div className="c-experiences">
                     {
                         experiences.map((item, i) => {
                             return(
-                                <h5 key={i}>{item}</h5>
+                                <div className="c-experiences__each" key={i} onClick={() => {this.handClickExperience(item)} }>
+                                    <h5>{item}</h5>
+                                </div>
                             )
                         })
                     }

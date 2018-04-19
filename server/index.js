@@ -71,6 +71,30 @@ app.delete('/hotels', (req, res) => {
 })
 
 
+app.get('/settingSearch', (req,res) => {
+  console.log(req.query.data)
+  db.getSettingSearch(req.query.data)
+  .then((response) => {
+    res.status(200).send(response)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+
+})
+
+app.get('/experienceSearch', (req,res) => {
+  console.log(req.query.data)
+  db.getExperienceSearch(req.query.data)
+  .then((response) => {
+    res.status(200).send(response)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+
+})
+
 
 let port = 8080;
 

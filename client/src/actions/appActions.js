@@ -2,32 +2,9 @@ import ActionTypes from '../constants/ActionTypes'
 import { push } from 'react-router-redux'
 import axios from 'axios'
 
-const helloWorld = () => ({ type: ActionTypes.HELLO_WORLD })
-
-
-const sayHi = () => (dispatch, getState) => {
-
-  console.log('in actions')
-  const state = getState();
-  console.log('state',state)
-
-  // dispatch(push(`/accountsList`));
-
-  
-  // dispatch({type: ActionTypes.HELLO_WORLD})
-  // return fetch('http://localhost:13332/signIn', {method: 'get'})
-  //   .then (
-  //     res=> {
-  //       console.log(res)
-  //       return dispatch({type: ActionTypes.SAY_HI})
-  //     }
-  //   )
-
-}
 
 const getAllHotels = () => (dispatch, getState) => {
 
-  console.log('in actions')
   const state = getState();
   console.log('state',state)
 
@@ -61,9 +38,60 @@ const deleteHotel = (hotelName) => (dispatch, getState) => {
     })
 }
 
+const getSettingSeach = (setting) => (dispatch,getState) => {
+  axios.get('/settingSearch', {
+    params:{
+      data: setting
+    }
+  })
+    .then((res) => {
+      console.log(res)
+      dispatch({
+        type: ActionTypes.GET_SEARCH_RESULTS,
+        code: res.data
+      }) 
+      dispatch(push(`/searchResults`));
+    })
+    .catch((err) => {
+      console.log('err');
+    })
+}
+
+const getExperienceSearch = (experience) => (dispatch,getState) => {
+  axios.get('/experienceSearch', {
+    params:{
+      data: experience
+    }
+  })
+    .then((res) => {
+      console.log(res)
+      dispatch({
+        type: ActionTypes.GET_SEARCH_RESULTS,
+        code: res.data
+      }) 
+      dispatch(push(`/searchResults`));
+    })
+    .catch((err) => {
+      console.log('err');
+    })
+}
+
+const setCurrentHotel = (item) => (dispatch,getState) => {
+  dispatch({
+    type: ActionTypes.SET_CURRENT_HOTEL,
+    code: item
+  })
+
+  dispatch(push(`/hotelInfo`));
+
+}
+
+
+
 module.exports = {
-  helloWorld,
-  sayHi,
   getAllHotels,
-  deleteHotel
+  deleteHotel,
+  getSettingSeach,
+  getExperienceSearch,
+  setCurrentHotel
 } 
