@@ -16,6 +16,7 @@ class AdminList extends React.Component {
     constructor(props){
       super(props)   
       this.handleClick = this.handleClick.bind(this)
+      this.handleDelete = this.handleDelete.bind(this)
     }
 
     componentDidMount(){
@@ -25,6 +26,23 @@ class AdminList extends React.Component {
     handleClick(){
       this.props.history.push('/createHotel')
 
+    }
+
+    handleDelete(hotelName){
+      console.log('this is delete btn', hotelName)
+      new Promise((resolve, reject) => {
+        if(this.props.actions.deleteHotel(hotelName)){
+          console.log('deleted in view!')
+          this.props.actions.getAllHotels()
+          resolve()
+        } else {
+          reject(new Error('failed'))
+        }
+      })
+      // this.props.actions.deleteHotel(hotelName)
+      // .then((some) => {
+      //   console.log(some)
+      // })
     }
 
 
@@ -58,7 +76,7 @@ class AdminList extends React.Component {
                     {
                       hotelsList ? hotelsList.map((item, i) => {
                         return(
-                          <HotelEachRow key={i} hotel={item} count={i}/>
+                          <HotelEachRow key={i} hotel={item} count={i} handleDelete= {(hotelName)=> { this.handleDelete(hotelName)}}/>
                         )
                       })
                       : ''

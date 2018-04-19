@@ -50,8 +50,13 @@ let getAllHotels = () => {
   return Hotel.find({}).exec();
 }
 
+let deleteHotel = (hotelName) => {
+  return Hotel.find({ name: hotelName }).remove().exec();
+}
+
 module.exports = {
   createHotel,
-  getAllHotels
+  getAllHotels,
+  deleteHotel
 }
 

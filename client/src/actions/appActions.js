@@ -45,8 +45,25 @@ const getAllHotels = () => (dispatch, getState) => {
 
 }
 
+
+const deleteHotel = (hotelName) => (dispatch, getState) => {
+  return axios.delete('/hotels', {
+    params: {
+      hotel: hotelName
+    }
+  })
+    .then(() => {
+      console.log('deleted')
+      return true
+    })
+    .catch((err) => {
+      console.log('err')
+    })
+}
+
 module.exports = {
   helloWorld,
   sayHi,
-  getAllHotels
+  getAllHotels,
+  deleteHotel
 } 

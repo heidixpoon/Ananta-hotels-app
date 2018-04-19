@@ -58,6 +58,18 @@ app.post('/hotels', (req, res) => {
   })
 })
 
+app.delete('/hotels', (req, res) => {
+  console.log(req.query.hotel)
+  db.deleteHotel(req.query.hotel)
+  .then(()=> {
+    console.log('success')
+    res.status(200).send()
+  })
+  .catch((err) => {
+    console.log('err');
+  })
+})
+
 
 
 let port = 8080;
