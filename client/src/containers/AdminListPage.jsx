@@ -29,7 +29,6 @@ class AdminList extends React.Component {
     }
 
     handleDelete(hotelName){
-      console.log('this is delete btn', hotelName)
       new Promise((resolve, reject) => {
         if(this.props.actions.deleteHotel(hotelName)){
           console.log('deleted in view!')
@@ -39,10 +38,7 @@ class AdminList extends React.Component {
           reject(new Error('failed'))
         }
       })
-      // this.props.actions.deleteHotel(hotelName)
-      // .then((some) => {
-      //   console.log(some)
-      // })
+
     }
 
 
@@ -65,7 +61,7 @@ class AdminList extends React.Component {
                     <TableRow>
                       <TableHeaderColumn></TableHeaderColumn>
                       <TableHeaderColumn>Hotel Name</TableHeaderColumn>
-                      <TableHeaderColumn>City</TableHeaderColumn>
+                      <TableHeaderColumn>City/Town</TableHeaderColumn>
                       <TableHeaderColumn>Setting</TableHeaderColumn>
                       <TableHeaderColumn>Experience</TableHeaderColumn>
                       <TableHeaderColumn>Delete?</TableHeaderColumn>
@@ -76,7 +72,7 @@ class AdminList extends React.Component {
                     {
                       hotelsList ? hotelsList.map((item, i) => {
                         return(
-                          <HotelEachRow key={i} hotel={item} count={i} handleDelete= {(hotelName)=> { this.handleDelete(hotelName)}}/>
+                          <HotelEachRow key={i} hotel={item} count={i+1} handleDelete= {(hotelName)=> { this.handleDelete(hotelName)}}/>
                         )
                       })
                       : ''

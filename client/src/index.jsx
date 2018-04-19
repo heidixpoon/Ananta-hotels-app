@@ -21,7 +21,7 @@ import AdminList from './containers/AdminListPage.jsx'
 import AdminCreateHotel from './containers/AdminCreatePage.jsx'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+import './styles/main.css'
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory()

@@ -48,7 +48,7 @@ class AdminCreateHotel extends React.Component {
               <br />
               <input type="text" placeholder="Hotel Website" ref={website => this.website = website}/>
               <br />
-              <input type="text" placeholder="City" ref={city => this.city = city}/>
+              <input type="text" placeholder="City/Town" ref={city => this.city = city}/>
               <br />
               <input type="text" placeholder="Country" ref={country => this.country = country}/>
               <br />
@@ -73,7 +73,7 @@ class AdminCreateHotel extends React.Component {
                 <option value="">Choose an Experience..</option>
                 <option value="Adventure">Adventure</option>
                 <option value="Wellness">Wellness</option>
-                <option value="Eco">Eco-Friendly</option>
+                <option value="Eco-Friendly">Eco-Friendly</option>
                 <option value="Indulgence">Indulgence</option>
               </select> 
 

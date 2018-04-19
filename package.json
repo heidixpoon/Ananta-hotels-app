@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js"
+    "server-dev": "nodemon server/index.js",
+    "watch-css": "node-sass-chokidar client/src/styles/sass -o client/src/styles --watch --recursive"
   },
   "repository": {
     "type": "git",
@@ -30,11 +31,13 @@
     "axios": "^0.18.0",
     "bcrypt": "^2.0.0",
     "body-parser": "^1.17.2",
+    "css-loader": "^0.28.11",
     "express": "^4.15.0",
     "express-session": "^1.15.6",
     "history": "^4.7.2",
     "material-ui": "^0.20.0",
     "mongoose": "^5.0.15",
+    "node-sass-chokidar": "^1.2.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.7",
@@ -42,6 +45,7 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "style-loader": "^0.21.0"
   }
 }
