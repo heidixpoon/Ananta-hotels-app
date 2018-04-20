@@ -104,10 +104,15 @@ const getMainSearchResults = (item) => (dispatch,getState) => {
     .catch((err) => {
       console.log('err in view')
     })
+}
 
+const setAdminCurrentHotel = (item) => (dispatch,getState) => {
+  dispatch({
+    type: ActionTypes.SET_ADMIN_CURRENT_HOTEL,
+    code: item
+  })
 
-  
-
+  dispatch(push(`/editHotel`));
 
 }
 
@@ -118,5 +123,6 @@ module.exports = {
   getSettingSeach,
   getExperienceSearch,
   setCurrentHotel,
-  getMainSearchResults
+  getMainSearchResults,
+  setAdminCurrentHotel
 } 

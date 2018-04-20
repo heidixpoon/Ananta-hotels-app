@@ -39,8 +39,28 @@ const createHotel = (dataObj) => (dispatch, getState) => {
 
 }
 
+const editHotel = (item) => (dispatch,getState) => {
+
+  axios.put('/hotels', {
+    params: item
+  })
+    .then((res) => {
+      console.log(res)
+      // dispatch({
+      //   type: ActionTypes.GET_SEARCH_RESULTS,
+      //   code: res.data
+      // }) 
+      dispatch(push(`/adminList`));
+    })
+    .catch((err) => {
+      console.log('err in view')
+    })
+
+}
+
 
 module.exports = {
   getAllHotels,
-  createHotel
+  createHotel,
+  editHotel
 } 

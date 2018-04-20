@@ -37,62 +37,75 @@ var restrict = (req, res, next) => {
 
 app.get('/hotels', (req,res) => {
   db.getAllHotels()
-  .then((response) => {
-    // console.log(response)
-    res.status(200).send(response);
-  })
-  .catch((err) => {
-    console.log(err)
-  })
+    .then((response) => {
+      // console.log(response)
+      res.status(200).send(response);
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 })
 
 app.post('/hotels', (req, res) => {
   // console.log(req.body.data);
   db.createHotel(req.body.data)
-  .then((response) => {
-    console.log(response)
-    res.status(200).send()
-  })
-  .catch((err) => {
-    console.log(err);
-  })
+    .then((response) => {
+      console.log(response)
+      res.status(200).send()
+    })
+    .catch((err) => {
+      console.log(err);
+    })
 })
+
+app.put('/hotels', (req,res) => {
+  // console.log(req.body.params)
+  db.updateHotel(req.body.params)
+    .then(() => {
+      console.log('success')
+      res.status(200).send();
+    })
+    .catch((err) => {
+      
+    })
+})
+
 
 app.delete('/hotels', (req, res) => {
   console.log(req.query.hotel)
   db.deleteHotel(req.query.hotel)
-  .then(()=> {
-    console.log('success')
-    res.status(200).send()
-  })
-  .catch((err) => {
-    console.log('err');
-  })
+    .then(()=> {
+      console.log('success')
+      res.status(200).send()
+    })
+    .catch((err) => {
+      console.log('err');
+    })
 })
 
 
 app.get('/settingSearch', (req,res) => {
   console.log(req.query.data)
   db.getSettingSearch(req.query.data)
-  .then((response) => {
-    res.status(200).send(response)
-  })
-  .catch((err) => {
-    console.log(err)
-  })
+    .then((response) => {
+      res.status(200).send(response)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 
 })
 
 app.get('/experienceSearch', (req,res) => {
   console.log(req.query.data)
   db.getExperienceSearch(req.query.data)
-  .then((response) => {
-    // console.log('something!', response)
-    res.status(200).send(response)
-  })
-  .catch((err) => {
-    console.log('hi', err)
-  })
+    .then((response) => {
+      // console.log('something!', response)
+      res.status(200).send(response)
+    })
+    .catch((err) => {
+      console.log('hi', err)
+    })
 
 })
 
@@ -100,27 +113,27 @@ app.get('/experienceSearch', (req,res) => {
 app.get('/mainSearch', (req,res) => {
   console.log(req.query.data)
   db.getSearchByName(req.query.data)
-  .then((response) => {
-    console.log(response, 'here');
-    if(response !== null) {
-      res.status(200).send(response)
-    }
-  })
-  .then(() => {
-    db.getSearchByCity(req.query.data)
     .then((response) => {
-      if(response !== []) {
-        res.status(200).send(response);
-      } else {
-        throw ('ERROR!!')
+      console.log(response, 'here');
+      if(response !== null) {
+        res.status(200).send(response)
       }
     })
-    .catch((err) => {
-      console.log(err)
-      // res.status(404).send();
-    })
+    .then(() => {
+      db.getSearchByCity(req.query.data)
+      .then((response) => {
+        if(response !== []) {
+          res.status(200).send(response);
+        } else {
+          throw ('ERROR!!')
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+        // res.status(404).send();
+      })
 
-  })
+    })
  
 })
 

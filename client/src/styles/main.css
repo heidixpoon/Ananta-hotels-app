@@ -50,14 +50,20 @@ h1 {
       border: none;
       flex: 1 0 auto;
       width: 400px;
-      height: 25px; }
+      height: 25px;
+      caret-color: white;
+      color: white;
+      font: 1em 'PT Sans', sans-serif; }
   .c-content__btn {
     max-width: 8rem;
     margin: 0 auto; }
 
 .c-content__form__input::-webkit-input-placeholder {
   color: white;
-  font-size: 1.2em; }
+  font-size: 1em; }
+
+.c-content__form__input:focus {
+  outline-width: 0; }
 
 .c-content h2 {
   margin: 0 auto;

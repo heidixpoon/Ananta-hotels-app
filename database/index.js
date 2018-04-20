@@ -50,6 +50,10 @@ let getAllHotels = () => {
   return Hotel.find({}).exec();
 }
 
+let updateHotel = (data) => {
+  return Hotel.update({_id: data._id}, { $set: data }).exec();
+}
+
 let deleteHotel = (hotelName) => {
   return Hotel.find({ name: hotelName }).remove().exec();
 }
@@ -77,6 +81,7 @@ let getSearchByCountry = (item) => {
 module.exports = {
   createHotel,
   getAllHotels,
+  updateHotel,
   deleteHotel,
   getSettingSearch,
   getExperienceSearch,

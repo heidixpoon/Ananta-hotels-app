@@ -20,6 +20,7 @@ import SearchResults from './containers/SearchResultsPage.jsx'
 import AdminList from './containers/AdminListPage.jsx'
 import AdminCreateHotel from './containers/AdminCreatePage.jsx'
 import HotelInfo from './containers/HotelInfoPage.jsx'
+import EditHotelInfo from './containers/AdminEditPage.jsx'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './styles/main.css'
@@ -58,6 +59,8 @@ ReactDOM.render(
         <Route exact path="/hotelInfo" component={HotelInfo}/>
         <Route exact path="/adminList" component={AdminList}/>
         <Route exact path="/createHotel" component={AdminCreateHotel}/>
+        <Route exact path="/editHotel" component={EditHotelInfo}/>
+
 
 
 

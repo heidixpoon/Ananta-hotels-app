@@ -1,7 +1,7 @@
 import React from 'react';
 import {TableRow,TableRowColumn} from 'material-ui/Table';
 
-const HotelEachRow = ({hotel, count, handleDelete}) => {
+const HotelEachRow = ({hotel, count, handleDelete, handleEdit}) => {
   let hotelName = hotel.name
 
   return (
@@ -11,8 +11,8 @@ const HotelEachRow = ({hotel, count, handleDelete}) => {
       <TableRowColumn>{hotel.city}</TableRowColumn>
       <TableRowColumn>{hotel.setting}</TableRowColumn>
       <TableRowColumn>{hotel.experience}</TableRowColumn>
+      <TableRowColumn><button onClick={()=> handleEdit(hotelName)}>Edit</button></TableRowColumn>
       <TableRowColumn><button onClick={()=> handleDelete(hotelName)}>Delete</button></TableRowColumn>
-      <TableRowColumn>Edit</TableRowColumn>
     </TableRow>
   );
 

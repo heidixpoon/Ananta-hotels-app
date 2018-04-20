@@ -17,6 +17,7 @@ class AdminList extends React.Component {
       super(props)   
       this.handleClick = this.handleClick.bind(this)
       this.handleDelete = this.handleDelete.bind(this)
+      this.handleEdit = this.handleEdit.bind(this)
     }
 
     componentDidMount(){
@@ -25,6 +26,11 @@ class AdminList extends React.Component {
 
     handleClick(){
       this.props.history.push('/createHotel')
+
+    }
+
+    handleEdit(hotelName){
+      this.props.actions.setAdminCurrentHotel(hotelName)
 
     }
 
@@ -64,15 +70,21 @@ class AdminList extends React.Component {
                       <TableHeaderColumn>City/Town</TableHeaderColumn>
                       <TableHeaderColumn>Setting</TableHeaderColumn>
                       <TableHeaderColumn>Experience</TableHeaderColumn>
-                      <TableHeaderColumn>Delete?</TableHeaderColumn>
                       <TableHeaderColumn>Edit?</TableHeaderColumn>
+                      <TableHeaderColumn>Delete?</TableHeaderColumn>
                     </TableRow>
                   </TableHeader>
                   <TableBody displayRowCheckbox={false}>
                     {
                       hotelsList ? hotelsList.map((item, i) => {
                         return(
-                          <HotelEachRow key={i} hotel={item} count={i+1} handleDelete= {(hotelName)=> { this.handleDelete(hotelName)}}/>
+                          <HotelEachRow 
+                            key={i} 
+                            hotel={item} 
+                            count={i+1} 
+                            handleDelete= {(hotelName)=> { this.handleDelete(hotelName)}}
+                            handleEdit = {(hotelName)=> { this.handleEdit(hotelName)}}
+                          />
                         )
                       })
                       : ''
