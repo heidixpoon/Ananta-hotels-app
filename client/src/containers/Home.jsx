@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as appActions from '../actions/appActions.js';
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 
@@ -15,12 +16,16 @@ class Home extends React.Component {
 
         this.handClickExperience = this.handClickExperience.bind(this)
         this.handleClickSetting = this.handleClickSetting.bind(this)
-
+        this.handleMainSearch = this.handleMainSearch.bind(this)
         
     }
 
     componentDidMount(){
         this.props.actions.getAllHotels()
+    }
+
+    handleMainSearch(){
+        this.props.actions.getMainSearchResults(this.mainSearch.value)
     }
 
     handleClickSetting(settingName){
@@ -41,11 +46,22 @@ class Home extends React.Component {
 
         return (
             <main>
-                <h1>The Ananta List</h1>
-                <div className="c-outer">
-                    <div className="c-video">
-                        <div className="c-videoHome">
-                            <iframe className="c-videoHome__iframe" frameBorder="0" height="250%" width="100%" 
+                <h1>The Ananta Collection</h1>
+                <div className="c-video-outer"> 
+                    <div className="c-content">
+                        <div className="c-content__container">
+                            <h2>Your tailor-made list of niche luxury and boutique hotels</h2>
+                            <div className="c-content__form">
+                                <input className="c-content__form__input" type="text" id="name" placeholder="Enter Destination/Hotel" ref={mainSearch => this.mainSearch = mainSearch}/>
+                            </div>
+                            <div className="c-content__btn">
+                                <RaisedButton onClick={this.handleMainSearch} label="Submit" style={{'width':'100px', 'fontFamily': 'PT Sans'}} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="c-video-inner">
+                        <div className="c-video">
+                            <iframe className="c-video__iframe" frameBorder="0" height="250%" width="100%" 
                                 src="https://www.youtube.com/embed/tNr8lDKzAxg?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1"
                                 allowFullScreen>
                             </iframe>
@@ -53,8 +69,13 @@ class Home extends React.Component {
                     </div>
                 </div>
 
+                <br/>
+                <h3>Explore by Setting:</h3>
+                <br/>
 
                 <div className="c-settings">
+
+
                     {
                         settings.map((item, i) => {
                             return (
@@ -69,6 +90,9 @@ class Home extends React.Component {
 
                 <br/>
 
+                <br/>
+                <h3>Discover by Experience:</h3>
+                <br/>
 
                 <div className="c-experiences">
                     {
@@ -82,6 +106,12 @@ class Home extends React.Component {
                     }
             
                 </div>
+
+                <br/>
+                <br/>
+                <h3>Featured Hotel: The Datai</h3>
+                <br/>
+
                 
             </main>
         )

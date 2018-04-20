@@ -14,8 +14,9 @@ const getHotelsList = (state, action) => {
 }
 
 const getSearchResults = (state, action) => {
-    console.log(action.code)
-    return updateObject(state, {searchResults: action.code})
+    let code = action.code
+    if(!code.length) { code = [code]}
+    return updateObject(state, {searchResults: code})
 }
 
 const setCurrentHotel = (state, action) => {

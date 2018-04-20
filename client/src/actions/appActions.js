@@ -53,7 +53,7 @@ const getSettingSeach = (setting) => (dispatch,getState) => {
       dispatch(push(`/searchResults`));
     })
     .catch((err) => {
-      console.log('err');
+      console.log('err', err);
     })
 }
 
@@ -86,6 +86,30 @@ const setCurrentHotel = (item) => (dispatch,getState) => {
 
 }
 
+const getMainSearchResults = (item) => (dispatch,getState) => {
+
+  axios.get('/mainSearch', {
+    params:{
+      data: item
+    }
+  })
+    .then((res) => {
+      console.log(res)
+      dispatch({
+        type: ActionTypes.GET_SEARCH_RESULTS,
+        code: res.data
+      }) 
+      dispatch(push(`/searchResults`));
+    })
+    .catch((err) => {
+      console.log('err in view')
+    })
+
+
+  
+
+
+}
 
 
 module.exports = {
@@ -93,5 +117,6 @@ module.exports = {
   deleteHotel,
   getSettingSeach,
   getExperienceSearch,
-  setCurrentHotel
+  setCurrentHotel,
+  getMainSearchResults
 } 

@@ -22,7 +22,7 @@ class HotelInfo extends React.Component {
             <main>
               <h1>This Hotel Info</h1>
               <h3>Hotel Name: {currentHotel.name}</h3>
-              <h5>City: {currentHotel.city}</h5>
+              <h5>City/Town: {currentHotel.city}</h5>
 
                 
             </main>

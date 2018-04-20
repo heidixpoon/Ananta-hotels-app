@@ -62,13 +62,26 @@ let getExperienceSearch = (experienceName) => {
   return Hotel.find({ experience: experienceName }).exec();
 } 
 
+let getSearchByName = (item) => {
+  return Hotel.findOne({ name: item }).exec();
+} 
 
+let getSearchByCity = (item) => {
+  return Hotel.find({ city: item }).exec();
+} 
+
+let getSearchByCountry = (item) => {
+  return Hotel.find({ country: item }).exec();
+} 
 
 module.exports = {
   createHotel,
   getAllHotels,
   deleteHotel,
   getSettingSearch,
-  getExperienceSearch
+  getExperienceSearch,
+  getSearchByName,
+  getSearchByCity,
+  getSearchByCountry
 }
 

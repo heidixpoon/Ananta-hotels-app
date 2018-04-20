@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Arapey|Cormorant+Garamond|Oranienbaum|Ubuntu+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Arapey|Cormorant+Garamond:300|Oranienbaum|PT+Sans|Ubuntu+Condensed");
 body {
   margin: 0; }
 
 h1 {
   font-family: 'Oranienbaum', serif; }
 
-.c-outer {
+.c-video-outer {
   padding: 0;
   max-width: initial;
   width: 100%;
@@ -16,18 +16,57 @@ h1 {
   overflow: hidden;
   position: relative; }
 
-.c-video {
+.c-video-inner {
   height: 500px;
   max-height: 500px; }
 
-.c-videoHome {
+.c-video {
+  z-index: -99;
   height: 100%; }
-  .c-videoHome__iframe {
+  .c-video__iframe {
     top: 50%;
     left: 50%;
     transform-style: preserve-3d;
     transform: translateY(-50%) translateX(-50%);
-    position: relative; }
+    position: relative;
+    filter: grayscale(20%); }
+
+.c-content {
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  margin: 0;
+  z-index: 5; }
+  .c-content__container {
+    margin: 0 auto; }
+  .c-content__form {
+    max-width: 27rem;
+    margin: 0 auto; }
+    .c-content__form__input {
+      margin-top: 80px;
+      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 10px 10px 10px 10px;
+      border: none;
+      flex: 1 0 auto;
+      width: 400px;
+      height: 25px; }
+  .c-content__btn {
+    max-width: 8rem;
+    margin: 0 auto; }
+
+.c-content__form__input::-webkit-input-placeholder {
+  color: white;
+  font-size: 1.2em; }
+
+.c-content h2 {
+  margin: 0 auto;
+  max-width: 35rem;
+  color: #FFF;
+  font-size: 1.4rem;
+  line-height: 1rem;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 100; }
 
 .c-settings {
   padding: 0;

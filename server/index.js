@@ -87,12 +87,41 @@ app.get('/experienceSearch', (req,res) => {
   console.log(req.query.data)
   db.getExperienceSearch(req.query.data)
   .then((response) => {
+    // console.log('something!', response)
     res.status(200).send(response)
   })
   .catch((err) => {
-    console.log(err)
+    console.log('hi', err)
   })
 
+})
+
+
+app.get('/mainSearch', (req,res) => {
+  console.log(req.query.data)
+  db.getSearchByName(req.query.data)
+  .then((response) => {
+    console.log(response, 'here');
+    if(response !== null) {
+      res.status(200).send(response)
+    }
+  })
+  .then(() => {
+    db.getSearchByCity(req.query.data)
+    .then((response) => {
+      if(response !== []) {
+        res.status(200).send(response);
+      } else {
+        throw ('ERROR!!')
+      }
+    })
+    .catch((err) => {
+      console.log(err)
+      // res.status(404).send();
+    })
+
+  })
+ 
 })
 
 

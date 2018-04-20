@@ -1,10 +1,10 @@
 body
   margin: 0
   
-h1 
+h1
   font-family: 'Oranienbaum', serif
 
-.c-outer
+.c-video-outer
     padding: 0;
     max-width: initial;
     width: 100%;
@@ -15,12 +15,12 @@ h1
     overflow: hidden;
     position: relative;
 
-.c-video 
+.c-video-inner
   height: 500px
   max-height:  500px
 
-.c-videoHome
-  // z-index: -99
+.c-video
+  z-index: -99
   // width: 100%
   height: 100%
   // max-width: 1280px
@@ -32,6 +32,48 @@ h1
     transform-style: preserve-3d
     transform: translateY(-50%) translateX(-50%)
     position: relative
+    filter: grayscale(20%);
+
+.c-content
+  width: 100%
+  position: absolute
+  top: 20%
+  margin: 0
+  z-index: 5
+  &__container
+    margin: 0 auto
+  &__form
+    max-width: 27rem
+    margin: 0 auto
+    &__input
+      margin-top: 80px
+      margin-bottom: 30px
+      background: rgba(255,255,255,0.3)
+      padding: 10px 10px 10px 10px
+      border: none
+      flex: 1 0 auto
+      width: 400px
+      height: 25px
+  &__btn
+    max-width: 8rem    
+    margin: 0 auto
+
+
+.c-content__form__input::-webkit-input-placeholder 
+  color: white
+  font-size: 1.2em
+
+
+.c-content h2
+    // margin-left: 100px
+    margin: 0 auto
+    max-width: 35rem;
+    color: #FFF;
+    font-size: 1.4rem;
+    line-height: 1rem;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 100
+
 
 .c-settings
   padding: 0
@@ -70,4 +112,4 @@ h1
 
 
 
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Arapey|Cormorant+Garamond|Oranienbaum|Ubuntu+Condensed')
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Arapey|Cormorant+Garamond:300|Oranienbaum|PT+Sans|Ubuntu+Condensed')
