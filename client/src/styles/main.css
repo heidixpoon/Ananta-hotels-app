@@ -5,6 +5,15 @@ body {
 h1 {
   font-family: 'Oranienbaum', serif; }
 
+.c-home-nav {
+  text-align: center; }
+
+.c-header__setting {
+  text-align: center; }
+
+.c-header__experience {
+  text-align: center; }
+
 .c-video-outer {
   padding: 0;
   max-width: initial;
@@ -76,7 +85,8 @@ h1 {
 
 .c-settings {
   padding: 0;
-  margin: 0;
+  margin-left: 50px;
+  margin-right: 50px;
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
@@ -87,8 +97,39 @@ h1 {
   display: -webkit-flex; }
   .c-settings__each {
     text-align: center;
-    width: 325px;
-    cursor: pointer; }
+    width: 28.33%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative; }
+  .c-settings__imgWrapper {
+    width: 33.33%;
+    overflow: hidden;
+    max-height: 210px;
+    height: 210px; }
+  .c-settings__size {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute; }
+  .c-settings__header {
+    z-index: 30;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .c-settings__Sea {
+    content: url("https://trisara.com/wp-content/uploads/2017/03/Ocean-View-Pool-Villa-3.jpg"); }
+  .c-settings__Rainforest {
+    content: url("https://scontent-lga3-1.cdninstagram.com/vp/4e3058adc9a8effaa4a703f83853f9cb/5B9CF50E/t51.2885-15/s640x640/sh0.08/e35/20214133_328543200930373_4247065169265426432_n.jpg"); }
+  .c-settings__Beach {
+    content: url("https://www.thedatai.com/media/1042/2beach_a7a7780v2_pg55.jpg?anchor=center&mode=crop&quality=80&width=615&height=359&rnd=131598110000000000"); }
+  .c-settings__Mountains {
+    content: url("https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/18010225_1342387312467267_6859796256821547038_n.jpg?_nc_cat=0&oh=1e08897639e2f137df7fe6b782bb5086&oe=5B673F73"); }
+  .c-settings__Urban {
+    content: url("http://www.langhamhotels.com/cdn-2891c7bb/globalassets/lhr/tl-hong-kong/rooms/tlhkg-rooms-penthousesuite-living-room-rendering-1680-945-large.jpg"); }
+  .c-settings__Suburban {
+    content: url("https://www.georgetownheritage.com/wp-content/uploads/2017/10/7-Terraces-021-1-1024x683.jpg"); }
 
 .c-experiences {
   padding: 0;

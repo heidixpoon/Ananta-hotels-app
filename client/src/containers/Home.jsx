@@ -46,7 +46,9 @@ class Home extends React.Component {
 
         return (
             <main>
-                <h1>The Ananta Collection</h1>
+                <div className="c-home-nav">
+                    <h1>The Ananta Collection</h1>
+                </div>
                 <div className="c-video-outer"> 
                     <div className="c-content">
                         <div className="c-content__container">
@@ -70,28 +72,37 @@ class Home extends React.Component {
                 </div>
 
                 <br/>
-                <h3>Explore by Setting:</h3>
+                <h3 className="c-header__setting">Explore by Setting</h3>
                 <br/>
 
-                <div className="c-settings">
+                <div>
+
+                    <div className="c-settings">
 
 
-                    {
-                        settings.map((item, i) => {
-                            return (
-                                <div className="c-settings__each" key={i} onClick={() => {this.handleClickSetting(item)} }>
-                                    <h5>{item}</h5>
-                                </div>
-                            )
-                        })
-                    }
-            
+                        {
+                            settings.map((item, i) => {
+                                return (
+                                    <div className="c-settings__each" key={i} onClick={() => {this.handleClickSetting(item)} }>
+                                        <div className="c-settings__imgWrapper">
+                                            <img className={`c-settings__${item} c-settings__size`} alt=""/>
+                                        </div>
+                                        <div className="c-settings__header">
+                                            <h5>{item}</h5>
+                                        </div>
+                                        
+                                    </div>
+                                )
+                            })
+                        }
+                
+                    </div>
                 </div>
 
                 <br/>
 
                 <br/>
-                <h3>Discover by Experience:</h3>
+                <h3 className="c-header__experience">Discover by Experience</h3>
                 <br/>
 
                 <div className="c-experiences">

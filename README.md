@@ -1,4 +1,4 @@
-# The Ananta List
+# The Ananta Collection
 
 Curated list of luxury and boutique hotels
 
