@@ -11,7 +11,7 @@ class Home extends React.Component {
         super(props) 
         this.state ={ 
             settings: ['Sea', 'Rainforest', 'Beach', 'Mountains', 'Urban', 'Suburban'],
-            experiences: ['Eco-Friendly', 'Adventure', 'Wellness', 'Indulgence']
+            experiences: ['Indulgence', 'Wellness', 'Adventure']
         }
 
         this.handClickExperience = this.handClickExperience.bind(this)
@@ -64,7 +64,7 @@ class Home extends React.Component {
                     <div className="c-video-inner">
                         <div className="c-video">
                             <iframe className="c-video__iframe" frameBorder="0" height="250%" width="100%" 
-                                src="https://www.youtube.com/embed/tNr8lDKzAxg?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1"
+                                src="https://www.youtube.com/embed/tNr8lDKzAxg?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=tNr8lDKzAxg"
                                 allowFullScreen>
                             </iframe>
                         </div>
@@ -100,7 +100,6 @@ class Home extends React.Component {
                 </div>
 
                 <br/>
-
                 <br/>
                 <h3 className="c-header__experience">Discover by Experience</h3>
                 <br/>
@@ -110,7 +109,12 @@ class Home extends React.Component {
                         experiences.map((item, i) => {
                             return(
                                 <div className="c-experiences__each" key={i} onClick={() => {this.handClickExperience(item)} }>
-                                    <h5>{item}</h5>
+                                        <div className="c-experiences__imgWrapper">
+                                            <img className={`c-experiences__${item} c-experiences__size`} alt=""/>
+                                        </div>
+                                        <div className="c-experiences__header">
+                                            <h5>{item}</h5>
+                                        </div>                                
                                 </div>
                             )
                         })

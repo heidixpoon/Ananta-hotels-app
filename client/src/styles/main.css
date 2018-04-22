@@ -3,16 +3,26 @@ body {
   margin: 0; }
 
 h1 {
-  font-family: 'Oranienbaum', serif; }
+  font-family: 'Oranienbaum', serif;
+  letter-spacing: 1px; }
+
+h5, h3 {
+  font-family: 'PT Sans', sans-serif; }
 
 .c-home-nav {
   text-align: center; }
 
 .c-header__setting {
-  text-align: center; }
+  text-align: center;
+  font-size: 24px; }
 
 .c-header__experience {
-  text-align: center; }
+  text-align: center;
+  border-top: 1px solid #E1E0E1;
+  padding-top: 38px;
+  width: 70%;
+  margin: 3% 15%;
+  font-size: 24px; }
 
 .c-video-outer {
   padding: 0;
@@ -85,8 +95,8 @@ h1 {
 
 .c-settings {
   padding: 0;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 130px;
+  margin-right: 130px;
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
@@ -97,20 +107,26 @@ h1 {
   display: -webkit-flex; }
   .c-settings__each {
     text-align: center;
-    width: 28.33%;
-    margin-bottom: 20px;
+    width: 31.88%;
+    margin-bottom: 14px;
     cursor: pointer;
     position: relative; }
   .c-settings__imgWrapper {
-    width: 33.33%;
     overflow: hidden;
-    max-height: 210px;
-    height: 210px; }
+    max-height: 220px;
+    height: 220px;
+    background: black; }
   .c-settings__size {
     display: block;
     width: 100%;
     height: 100%;
-    position: absolute; }
+    position: absolute;
+    filter: grayscale(30%);
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear; }
   .c-settings__header {
     z-index: 30;
     position: absolute;
@@ -118,12 +134,17 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
+  .c-settings__header h5 {
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    text-shadow: 2px 2px 2px grey; }
   .c-settings__Sea {
     content: url("https://trisara.com/wp-content/uploads/2017/03/Ocean-View-Pool-Villa-3.jpg"); }
   .c-settings__Rainforest {
     content: url("https://scontent-lga3-1.cdninstagram.com/vp/4e3058adc9a8effaa4a703f83853f9cb/5B9CF50E/t51.2885-15/s640x640/sh0.08/e35/20214133_328543200930373_4247065169265426432_n.jpg"); }
   .c-settings__Beach {
-    content: url("https://www.thedatai.com/media/1042/2beach_a7a7780v2_pg55.jpg?anchor=center&mode=crop&quality=80&width=615&height=359&rnd=131598110000000000"); }
+    content: url("https://www.thedatai.com/media/1058/3beach_a7a7788v3_pg56.jpg?anchor=center&mode=crop&quality=80&width=1260&height=736&rnd=131598110340000000"); }
   .c-settings__Mountains {
     content: url("https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/18010225_1342387312467267_6859796256821547038_n.jpg?_nc_cat=0&oh=1e08897639e2f137df7fe6b782bb5086&oe=5B673F73"); }
   .c-settings__Urban {
@@ -131,9 +152,13 @@ h1 {
   .c-settings__Suburban {
     content: url("https://www.georgetownheritage.com/wp-content/uploads/2017/10/7-Terraces-021-1-1024x683.jpg"); }
 
+.c-settings__imgWrapper:hover img {
+  opacity: 0.7; }
+
 .c-experiences {
   padding: 0;
-  margin: 0;
+  margin-left: 130px;
+  margin-right: 130px;
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
@@ -144,4 +169,98 @@ h1 {
   display: -webkit-flex; }
   .c-experiences__each {
     text-align: center;
-    cursor: pointer; }
+    width: 31.88%;
+    margin-bottom: 14px;
+    cursor: pointer;
+    position: relative; }
+  .c-experiences__imgWrapper {
+    overflow: hidden;
+    max-height: 220px;
+    height: 220px;
+    background: black; }
+  .c-experiences__size {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: grayscale(30%);
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear; }
+  .c-experiences__header {
+    z-index: 30;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .c-experiences__header h5 {
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    text-shadow: 2px 2px 2px grey; }
+  .c-experiences__Indulgence {
+    content: url("https://trisara.com/wp-content/uploads/2017/03/Trisara-2-Bedroom-Villa-3.jpg"); }
+  .c-experiences__Wellness {
+    content: url("https://www.thedatai.com/media/1090/beach-villa2_a7a3919v2_pg117.jpg?anchor=center&mode=crop&quality=80&width=1260&height=736&rnd=131598111050000000"); }
+  .c-experiences__Adventure {
+    content: url("https://www.thedatai.com/media/1053/2nature-wellbeing_a7a6229v3_pg78.jpg?anchor=center&mode=crop&quality=80&width=1260&height=736&rnd=131598110280000000"); }
+
+.c-experiences__imgWrapper:hover img {
+  opacity: 0.7; }
+
+.c-search__header {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  z-index: 5;
+  transform-origin: initial;
+  transform: translateY(-50%);
+  border-width: 1px 0;
+  text-align: center; }
+  .c-search__header-title {
+    max-width: 40rem;
+    margin: 0 auto;
+    color: #FFF;
+    font-size: 1.75rem;
+    line-height: 3rem;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 1px grey; }
+
+.c-search-hero {
+  padding: 0;
+  max-width: initial;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  height: 16rem;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  position: relative; }
+  .c-search-hero__imgWrapper {
+    display: block;
+    position: relative;
+    min-height: 200px;
+    text-align: center; }
+  .c-search-hero__article {
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0; }
+  .c-search-hero__size {
+    transform: translateY(-50%) translateX(-50%);
+    transform-origin: initial;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 90rem;
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(30%);
+    content: url("https://d3e7bfg0h5jt4g.mrandmrssmith.com/images/2448x874/3247057-230040-praana3-panacea-praana-residence1-.jpg"); }
