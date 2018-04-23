@@ -124,7 +124,7 @@ class Home extends React.Component {
 
                 <br/>
                 <br/>
-                <h3>Featured Hotel: The Datai</h3>
+                <h3 className="c-header__experience">Featured Hotel: The Datai</h3>
                 <br/>
 
                 

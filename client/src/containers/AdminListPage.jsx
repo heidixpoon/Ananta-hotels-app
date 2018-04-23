@@ -10,6 +10,8 @@ import {
   TableHeaderColumn,
   TableRow
 } from 'material-ui/Table';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 import HotelEachRow from '../components/HotelEachRow.jsx'
 
 class AdminList extends React.Component {
@@ -59,16 +61,19 @@ class AdminList extends React.Component {
 
         return (
             <main>
-              <h1>Admin List</h1>
-              <button onClick={this.redirectHome}>Go to Client View</button>
-              <br/><br/>
+              <div className="c-admin-header">
+                <h1>The Ananta Collection: Admin</h1>
+                <button onClick={this.redirectHome}>Go to Client View</button>
+              </div>
 
               <div className="c-admin-main">
                   <Card>
                   
                   <CardTitle title="Hotels List" subtitle="" />
                   <br/><br/>
-                  <button className="c-admin-createBtn" onClick={this.handleClick}>Create Hotel</button>
+                  <FloatingActionButton className="c-admin-createBtn" mini={true} backgroundColor={'#5690AF'}onClick={this.handleClick}>
+                    <ContentAdd />
+                  </FloatingActionButton>
 
                   <Table>
                     <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
@@ -78,8 +83,8 @@ class AdminList extends React.Component {
                         <TableHeaderColumn>City/Town</TableHeaderColumn>
                         <TableHeaderColumn>Setting</TableHeaderColumn>
                         <TableHeaderColumn>Experience</TableHeaderColumn>
-                        <TableHeaderColumn>Edit?</TableHeaderColumn>
-                        <TableHeaderColumn>Delete?</TableHeaderColumn>
+                        <TableHeaderColumn></TableHeaderColumn>
+                        <TableHeaderColumn></TableHeaderColumn>
                       </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox={false}>

@@ -294,13 +294,21 @@ h5, h3, h4 {
       text-transform: uppercase;
       font-size: 14px; }
 
+.c-admin-header {
+  margin-left: 20px;
+  margin-bottom: 50px; }
+
 .c-admin-main {
   margin: 0 10%; }
 
 .c-admin-createBtn {
   position: absolute;
-  left: 80%;
-  top: 21%; }
+  left: 83%;
+  top: 170px; }
+
+.c-adminForm-main {
+  text-align: center;
+  margin: 0 25% 30px; }
 
 .c-hotelInfo__header {
   width: 100%;
