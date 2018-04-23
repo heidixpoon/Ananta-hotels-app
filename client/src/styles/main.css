@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Arapey|Cormorant+Garamond:300|Oranienbaum|PT+Sans|Ubuntu+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Arapey|Cormorant+Garamond:300|Oranienbaum|PT+Sans|Raleway|Ubuntu+Condensed");
 body {
   margin: 0; }
 
@@ -6,11 +6,14 @@ h1 {
   font-family: 'Oranienbaum', serif;
   letter-spacing: 1px; }
 
-h5, h3 {
-  font-family: 'PT Sans', sans-serif; }
+h5, h3, h4 {
+  font-family: 'Raleway', sans-serif; }
 
 .c-home-nav {
   text-align: center; }
+
+.c-nav-header {
+  cursor: pointer; }
 
 .c-header__setting {
   text-align: center;
@@ -240,7 +243,8 @@ h5, h3 {
   height: 16rem;
   transform-style: preserve-3d;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  margin-bottom: 40px; }
   .c-search-hero__imgWrapper {
     display: block;
     position: relative;
@@ -264,3 +268,195 @@ h5, h3 {
     height: auto;
     filter: grayscale(30%);
     content: url("https://d3e7bfg0h5jt4g.mrandmrssmith.com/images/2448x874/3247057-230040-praana3-panacea-praana-residence1-.jpg"); }
+
+.c-search-eachResult {
+  border: 1px solid #EEE;
+  padding: 20px;
+  width: 60%;
+  margin: 0 22% 20px; }
+  .c-search-eachResult__left {
+    display: inline-block;
+    overflow: hidden;
+    max-height: 270px;
+    height: 270px;
+    background: black;
+    position: relative; }
+    .c-search-eachResult__left-img {
+      display: block;
+      height: 100%; }
+  .c-search-eachResult__right {
+    display: inline-block;
+    position: absolute;
+    margin-left: 55px; }
+    .c-search-eachResult__right h3 {
+      font-size: 25px; }
+    .c-search-eachResult__right h4 {
+      text-transform: uppercase;
+      font-size: 14px; }
+
+.c-admin-main {
+  margin: 0 10%; }
+
+.c-admin-createBtn {
+  position: absolute;
+  left: 80%;
+  top: 21%; }
+
+.c-hotelInfo__header {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  z-index: 5;
+  transform-origin: initial;
+  transform: translateY(-50%);
+  border-width: 1px 0;
+  text-align: center; }
+  .c-hotelInfo__header-title {
+    max-width: 40rem;
+    margin: 0 auto;
+    color: #FFF;
+    font-size: 1.75rem;
+    line-height: 3rem;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 1px grey; }
+
+.c-hotelInfo-hero {
+  padding: 0;
+  max-width: initial;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  height: 25rem;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px; }
+  .c-hotelInfo-hero__imgWrapper {
+    display: block;
+    position: relative;
+    min-height: 550px;
+    text-align: center; }
+  .c-hotelInfo-hero__article {
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0; }
+  .c-hotelInfo-hero__size {
+    transform: translateY(-50%) translateX(-50%);
+    transform-origin: initial;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 90rem;
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(30%); }
+
+.c-hotelInfo-main {
+  margin: 0 20%;
+  font-family: 'Raleway', sans-serif; }
+  .c-hotelInfo-main__top {
+    text-align: center; }
+    .c-hotelInfo-main__top h3 {
+      font-size: 2.2em;
+      letter-spacing: 2px;
+      font-family: 'Raleway', sans-serif; }
+    .c-hotelInfo-main__top h5 {
+      text-transform: uppercase;
+      font-family: 'Raleway', sans-serif; }
+  .c-hotelInfo-main p {
+    line-height: 1.5em; }
+
+.c-hotelInfo-middle {
+  margin: 0 10%;
+  font-family: 'Raleway', sans-serif; }
+
+.c-hotelInfo-charRight {
+  border: 1px solid #EEE;
+  padding: 20px;
+  width: 100%;
+  margin: 70px 0 65px; }
+  .c-hotelInfo-charRight__left {
+    display: inline-block;
+    overflow: hidden;
+    max-height: 430px;
+    height: 430px;
+    background: black;
+    position: relative; }
+    .c-hotelInfo-charRight__left-img {
+      display: block;
+      height: 100%; }
+  .c-hotelInfo-charRight__right {
+    color: #808080;
+    display: inline-block;
+    position: absolute;
+    margin-left: 55px;
+    margin-right: 10%; }
+
+.c-hotelInfo-charLeft {
+  border: 1px solid #EEE;
+  padding: 20px;
+  width: 100%;
+  margin: 70px 0 65px; }
+  .c-hotelInfo-charLeft__left {
+    color: #808080;
+    display: inline-block;
+    margin-right: 10%;
+    width: 30%; }
+    .c-hotelInfo-charLeft__left-content {
+      position: relative;
+      bottom: 255px;
+      left: 25px; }
+  .c-hotelInfo-charLeft__right {
+    display: inline-block;
+    overflow: hidden;
+    max-height: 430px;
+    height: 430px;
+    background: black;
+    position: relative; }
+    .c-hotelInfo-charLeft__right-img {
+      display: block;
+      height: 100%; }
+
+.l-viewBtn {
+  background: transparent;
+  outline: none;
+  position: relative;
+  border: 1px solid #111;
+  padding: 11px 50px;
+  overflow: hidden;
+  font-size: 14px;
+  cursor: pointer; }
+
+.l-viewBtn:hover:before {
+  opacity: 1;
+  transform: translate(0, 0); }
+
+.l-viewBtn:before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 1.1em;
+  left: 0;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: .8em;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: all .3s ease-in-out; }
+
+.l-viewBtn:hover div {
+  opacity: 0;
+  transform: translate(100%, 0); }
+
+.l-viewBtn div {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: .8em;
+  transition: all .3s ease-in-out; }

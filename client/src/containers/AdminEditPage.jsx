@@ -18,25 +18,26 @@ class AdminEditHotel extends React.Component {
       let dataObj = {
         '_id': hotel._id,
         'name': this.name.value,
-        'website': this.website.value,
+        'hotelUrl': this.website.value,
         'city': this.city.value,
         'country': this.country.value,
         'mainImg': this.mainImg.value,
         'endImg': this.endImg.value,
         'setting': this.setting.value,
         'experience': this.experience.value,
-        'mainDes': this.mainDes.value,
-        'firTopic': this.firTopic.value,
-        'firImg': this.firImg.value,
-        'firDes': this.firDes.value,
-        'secTopic': this.secTopic.value,
-        'secImg': this.secImg.value,
-        'secDes': this.secDes.value,
+        'mainDesc': this.mainDes.value,
+        'firstTopic': this.firTopic.value,
+        'firstImg': this.firImg.value,
+        'firstDesc': this.firDes.value,
+        'secondTopic': this.secTopic.value,
+        'secondImg': this.secImg.value,
+        'secondDesc': this.secDes.value,
         'thirdTopic': this.thirdTopic.value,
         'thirdImg': this.thirdImg.value,
-        'thirdDes': this.thirdDes.value
+        'thirdDesc': this.thirdDes.value
       }
 
+      console.log('data', dataObj)
       this.props.adminActions.editHotel(dataObj)
 
     

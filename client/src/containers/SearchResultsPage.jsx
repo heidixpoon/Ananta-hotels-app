@@ -10,14 +10,16 @@ class SearchResults extends React.Component {
         super(props) 
 
         this.handleClick = this.handleClick.bind(this)
+        this.redirectHome = this.redirectHome.bind(this)
     }
 
     handleClick(item){
         this.props.actions.setCurrentHotel(item)
     }
 
-
-
+    redirectHome(){
+        this.props.history.push('/');
+    }
 
     render() {  
         console.log('=======',this.props.appState)
@@ -26,7 +28,7 @@ class SearchResults extends React.Component {
         return (
             <main>
                 <div className="c-home-nav">
-                    <h1>The Ananta Collection</h1>
+                    <h1 className="c-nav-header" onClick={this.redirectHome}>The Ananta Collection</h1>
                 </div>
 
                 <br/>
@@ -45,22 +47,23 @@ class SearchResults extends React.Component {
                 </div>
 
 
-              {
+                {
                   searchResults.map((item, i) => {
                         return (
                             <div className="c-search-eachResult" key={i}>
                                 <div className="c-search-eachResult__left">
-                                    <img src={item.mainImg} alt="" />
+                                    <img className="c-search-eachResult__left-img" src={item.mainImg} alt="" />
                                 </div>
                                 <div className="c-search-eachResult__right">
                                     <h3>{item.name}</h3>
-                                    <h3>{item.city}, {item.country}</h3>
-                                    <button onClick={()=> {this.handleClick(item)} }>View Hotel</button>
+                                    <h4>{item.city}, {item.country}</h4>
+                                    <br/><br/><br/>
+                                    <button data-hover="click for more.." className="l-viewBtn" onClick={()=> {this.handleClick(item)} }><div>VIEW HOTEL</div></button>
                                 </div>
                             </div>
                     )
                   })
-              }
+                }
                 
             </main>
         )

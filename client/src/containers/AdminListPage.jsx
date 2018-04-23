@@ -18,6 +18,7 @@ class AdminList extends React.Component {
       this.handleClick = this.handleClick.bind(this)
       this.handleDelete = this.handleDelete.bind(this)
       this.handleEdit = this.handleEdit.bind(this)
+      this.redirectHome = this.redirectHome.bind(this)
     }
 
     componentDidMount(){
@@ -47,6 +48,10 @@ class AdminList extends React.Component {
 
     }
 
+    redirectHome(){
+      this.props.history.push('/');
+    }
+
 
     render() { 
       console.log(this.props.appState) 
@@ -54,45 +59,50 @@ class AdminList extends React.Component {
 
         return (
             <main>
-              <h1>This is Admin List</h1>
-              <button onClick={this.handleClick}>Create Hotel</button>
+              <h1>Admin List</h1>
+              <button onClick={this.redirectHome}>Go to Client View</button>
+              <br/><br/>
 
-               <Card>
+              <div className="c-admin-main">
+                  <Card>
+                  
+                  <CardTitle title="Hotels List" subtitle="" />
+                  <br/><br/>
+                  <button className="c-admin-createBtn" onClick={this.handleClick}>Create Hotel</button>
+
+                  <Table>
+                    <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+                      <TableRow>
+                        <TableHeaderColumn></TableHeaderColumn>
+                        <TableHeaderColumn>Hotel Name</TableHeaderColumn>
+                        <TableHeaderColumn>City/Town</TableHeaderColumn>
+                        <TableHeaderColumn>Setting</TableHeaderColumn>
+                        <TableHeaderColumn>Experience</TableHeaderColumn>
+                        <TableHeaderColumn>Edit?</TableHeaderColumn>
+                        <TableHeaderColumn>Delete?</TableHeaderColumn>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody displayRowCheckbox={false}>
+                      {
+                        hotelsList ? hotelsList.map((item, i) => {
+                          return(
+                            <HotelEachRow 
+                              key={i} 
+                              hotel={item} 
+                              count={i+1} 
+                              handleDelete= {(hotelName)=> { this.handleDelete(hotelName)}}
+                              handleEdit = {(hotelName)=> { this.handleEdit(hotelName)}}
+                            />
+                          )
+                        })
+                        : ''
+                      }
+                    </TableBody>
+                  </Table>
+                  
+                </Card>
+              </div>
                
-                <CardTitle title="Hotels List" subtitle="" />
-                <br/><br/><br/>
-
-                <Table>
-                  <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-                    <TableRow>
-                      <TableHeaderColumn></TableHeaderColumn>
-                      <TableHeaderColumn>Hotel Name</TableHeaderColumn>
-                      <TableHeaderColumn>City/Town</TableHeaderColumn>
-                      <TableHeaderColumn>Setting</TableHeaderColumn>
-                      <TableHeaderColumn>Experience</TableHeaderColumn>
-                      <TableHeaderColumn>Edit?</TableHeaderColumn>
-                      <TableHeaderColumn>Delete?</TableHeaderColumn>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody displayRowCheckbox={false}>
-                    {
-                      hotelsList ? hotelsList.map((item, i) => {
-                        return(
-                          <HotelEachRow 
-                            key={i} 
-                            hotel={item} 
-                            count={i+1} 
-                            handleDelete= {(hotelName)=> { this.handleDelete(hotelName)}}
-                            handleEdit = {(hotelName)=> { this.handleEdit(hotelName)}}
-                          />
-                        )
-                      })
-                      : ''
-                    }
-                  </TableBody>
-                </Table>
-                
-              </Card>
                 
             </main>
         )
