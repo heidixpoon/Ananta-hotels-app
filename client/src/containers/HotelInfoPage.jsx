@@ -82,7 +82,21 @@ class HotelInfo extends React.Component {
                       <p>{currentHotel.thirdDesc}</p>
                     </div>
                   </div>
+
+
+                  <div className="c-hotelInfo-hero c-hotelInfo-endImg">
+                      <section className="c-hotelInfo-hero__imgWrapper">
+                          <article className="c-hotelInfo-hero__article">
+                              <div className="c-hotelInfo-hero__div">
+                                  <img src={currentHotel.endImg} className="c-hotelInfo-hero__size" alt="" />
+                              </div>
+                          </article>
+                      </section>
+                  </div>
+
                 </div>
+
+               
                
 
                 
