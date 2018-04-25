@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const hotelObj = require('./schemas.js').hotelObj;
 
 mongoose.Promise = Promise;
-// mongoose.connect('mongodb://localhost/eventsApp');
 mongoose.connect(process.env.MLAB || 'mongodb://localhost/AnantaHotelsApp')
 
 
