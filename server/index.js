@@ -4,7 +4,7 @@ const axios = require('axios');
 const bcrypt = require('bcrypt');
 const path = require('path');
 
-const config = require ('../config.js');
+// const config = require ('../config.js');
 const db = require('../database/index.js')
 
 let app = express();
