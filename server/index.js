@@ -138,11 +138,13 @@ app.get('/mainSearch', (req,res) => {
 })
 
 
-let port = process.env.PORT || 8080;
 
 app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));
 })
+
+
+let port = process.env.PORT || 8080;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
