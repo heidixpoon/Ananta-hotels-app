@@ -18,6 +18,9 @@ Deployed link: [https://ananta-collection.herokuapp.com/](https://ananta-collect
   * react-router-redux
   * redux-thunk
 
+* Webpack
+  * Babel
+
 * Sass
   * node-sass-chokidar
 
@@ -25,8 +28,9 @@ Deployed link: [https://ananta-collection.herokuapp.com/](https://ananta-collect
   * Express
 
 * MongoDB
+  * Mongoose
 
-
+---
 
 Copyright (c) 2018 Heidi Poon
 
