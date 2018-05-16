@@ -1,6 +1,7 @@
 # The Ananta Collection
 
 A curated luxury and boutique hotels search platform
+
 Deployed link: [https://ananta-collection.herokuapp.com/](https://ananta-collection.herokuapp.com/)
 
 
